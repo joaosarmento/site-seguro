@@ -1448,7 +1448,9 @@ class Handler(SimpleHTTPRequestHandler):
                 self.respond(503, {'error': 'Avaliações indisponíveis. Tente novamente.'})
         elif path.path.startswith('/api/'):
             self.respond(404, {'error': 'Recurso não encontrado.'})
-        elif path.path in ('/', '/index.html', '/style.css', '/dark.css', '/analysis.js'):
+        elif path.path in ('/', '/index.html', '/style.css', '/dark.css', '/analysis.js', '/privacidade', '/privacidade.html'):
+            if path.path == '/privacidade':
+                self.path = '/privacidade.html'
             super().do_GET()
         else:
             self.send_error(404)
@@ -1531,8 +1533,11 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_HEAD(self):
         # Restrict static paths for HEAD as well as GET (no directory listing).
-        if urlparse(self.path).path not in ('/', '/index.html', '/style.css', '/dark.css', '/analysis.js'):
+        path = urlparse(self.path).path
+        if path not in ('/', '/index.html', '/style.css', '/dark.css', '/analysis.js', '/privacidade', '/privacidade.html'):
             return self.respond(404, {'error': 'Recurso não encontrado.'})
+        if path == '/privacidade':
+            self.path = '/privacidade.html'
         super().do_HEAD()
 
     def log_message(self, format, *args):

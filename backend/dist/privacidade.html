@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Saiba como o Site Seguro trata os endereços analisados e as avaliações enviadas.">
+  <title>Política de Privacidade | Site Seguro</title>
+  <link rel="stylesheet" href="/style.css?v=0.10.1">
+  <link rel="stylesheet" href="/dark.css?v=0.10.1">
+  <style>
+    .privacy{max-width:850px;margin:0 auto;padding:46px 32px 64px}
+    .privacy h1{font-size:clamp(32px,5vw,48px);margin:10px 0 16px}
+    .privacy h2{font-size:22px;margin:32px 0 10px}
+    .privacy p,.privacy li{line-height:1.7;color:#c0d0c4}
+    .privacy li{margin:8px 0}.privacy a{color:#8aefbc;text-decoration:underline;overflow-wrap:anywhere}
+    .privacy .date{color:#a5b8ad;font-size:14px}
+    .privacy-header{max-width:1200px}.privacy-footer{justify-content:space-between}
+    @media(max-width:520px){.privacy{padding:32px 20px 48px}.privacy h2{font-size:20px}}
+  </style>
+</head>
+<body>
+<header class="privacy-header"><a class="brand" href="/"><span class="mark">S</span> Site Seguro<span class="dot">.</span></a></header>
+<main class="privacy">
+  <p class="eyebrow">SITE SEGURO</p>
+  <h1>Política de Privacidade</h1>
+  <p class="date">Última atualização: 8 de novembro de 2026</p>
+  <p>Esta política explica como a extensão Site Seguro e a página de análise tratam os endereços informados e as avaliações enviadas.</p>
+
+  <h2>1. Endereços analisados</h2>
+  <p>Ao abrir a extensão, ela lê o endereço da aba ativa para exibir o domínio e identificar um resultado recente. A análise só começa quando você clica em <strong>Analisar site</strong>; não há monitoramento contínuo da navegação. Após esse clique, o processamento pode continuar em segundo plano até a conclusão.</p>
+  <p>Quando você inicia uma análise, a extensão encaminha o endereço, sem o fragmento após <code>#</code>, ao serviço responsável pela verificação. Se você usar o formulário do site, o endereço digitado é enviado ao servidor hospedado em <a href="https://site-seguro.onrender.com/">site-seguro.onrender.com</a>.</p>
+
+  <h2>2. Consultas e dados sensíveis</h2>
+  <p>Para analisar um endereço, o motor consulta o DNS, acessa o site informado e pode seguir redirecionamentos. O endereço solicitado, inclusive o caminho e os parâmetros, pode chegar ao site analisado e aos destinos de redirecionamento. Também pode haver consultas a serviços de registro de domínio, como RDAP.</p>
+  <p>Quando configurados, Google Safe Browsing, VirusTotal e URLhaus podem receber dados do endereço para consulta de reputação. Para URLs com parâmetros de consulta ou sinais comuns de dados privados, o motor restringe essas consultas: não envia a URL completa ao Google Safe Browsing ou ao VirusTotal e pode consultar somente o hostname no URLhaus. Esses filtros não identificam todos os dados sensíveis e não impedem o acesso ao próprio site.</p>
+  <p>Evite analisar links de contas pessoais, internet banking, recuperação de senha ou endereços com tokens ou outros dados privados. As consultas aos provedores dependem da configuração das chaves de acesso e podem estar indisponíveis.</p>
+
+  <h2>3. Armazenamento e retenção</h2>
+  <ul>
+    <li><strong>Sessão do Chrome:</strong> a extensão usa <code>chrome.storage.session</code> para guardar temporariamente o último endereço, o estado da análise e o resultado. Resultados com cinco minutos ou mais deixam de ser reutilizados; a limpeza pode ocorrer na próxima interação ou ao terminar a sessão da extensão, não necessariamente no instante exato dos cinco minutos.</li>
+    <li><strong>Memória do servidor:</strong> resultados e dados necessários à análise podem ser mantidos em memória. O cache deixa de reutilizar resultados após cinco minutos; entradas antigas podem permanecer em memória até a limpeza do cache ou o encerramento do processo.</li>
+    <li><strong>Disco e avaliações:</strong> o código não mantém um histórico persistente das URLs analisadas. Se você enviar uma avaliação no site, a nota, resposta, nome escolhido, comentário e data são armazenados e podem ser publicados conforme seu consentimento. Para limitar envios repetidos, o banco também armazena um identificador derivado do endereço IP recebido pelo servidor e o horário do envio. Não há prazo automático de exclusão de avaliações implementado nesta versão.</li>
+    <li><strong>Hospedagem:</strong> a infraestrutura e os serviços externos podem registrar informações de conexão segundo suas próprias políticas. O sistema de arquivos do Render pode ser temporário; avaliações armazenadas nele podem ser perdidas em reinícios ou deploys.</li>
+  </ul>
+
+  <h2>4. Compartilhamento</h2>
+  <p>O projeto não vende nem aluga as informações enviadas. Os dados necessários às consultas são compartilhados com o site analisado, serviços de DNS e registro e, quando aplicável, com os provedores de reputação mencionados acima. A extensão não envia a identidade da sua conta Google nem cookies de navegação aos provedores de reputação, mas endereços analisados e informações de conexão podem permitir identificação em alguns casos. Esses serviços aplicam suas próprias políticas de privacidade.</p>
+
+  <h2>5. Permissões da extensão</h2>
+  <ul>
+    <li><code>activeTab</code>: permite obter o endereço da aba ativa quando a extensão é acionada.</li>
+    <li><code>storage</code>: permite guardar o estado e o resultado temporário da análise na sessão.</li>
+    <li>Acesso ao serviço de análise configurado: permite que a extensão envie o endereço para verificação e receba o resultado.</li>
+  </ul>
+
+  <h2>6. Contato e alterações</h2>
+  <p>Para dúvidas sobre esta política ou solicitações relacionadas aos seus dados, entre em contato pelo <a href="https://github.com/joaosarmento/site-seguro/issues">canal de issues do projeto no GitHub</a>. As issues são públicas: não inclua links privados, senhas, tokens ou dados pessoais na mensagem.</p>
+  <p>Esta política poderá ser atualizada quando o funcionamento do projeto mudar. A data no início da página indica a última atualização.</p>
+</main>
+<footer class="privacy-footer"><span class="brand">Site Seguro.</span><a href="/">Voltar ao site</a></footer>
+</body>
+</html>
