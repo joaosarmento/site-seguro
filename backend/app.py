@@ -89,12 +89,10 @@ class ExtensionHandler(engine.Handler):
         protocolo = 'https://' if IS_RENDER else 'http://'
         same_origin = protocolo + self.headers.get('Host', '')
         
-        if IS_RENDER:
-            if origin and origin != same_origin:
-                return self.respond(403, {'error': 'Origem não autorizada em produção.'})
-        else:
-            if origin and origin not in (EXTENSION_ORIGIN, same_origin):
-                return self.respond(403, {'error': 'Origem não autorizada.'})
+        # A identidade da extensão é fixa no manifesto de desenvolvimento.
+        # Origin é apenas uma verificação de origem, não autenticação.
+        if origin and origin not in (EXTENSION_ORIGIN, same_origin):
+            return self.respond(403, {'error': 'Origem não autorizada.'})
         
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
             return self.respond(415, {'error': 'Use JSON.'})
@@ -145,7 +143,7 @@ def main():
     except Exception:
         print('Não foi possível iniciar. Confira Python, certificados e se a porta8765 está ocupada.')
         return 1
-    print('Site Seguro — extensão 1.3.2 / motor web' + engine.VERSION, flush=True)
+    print('Site Seguro — extensão 1.4.0 / motor web' + engine.VERSION, flush=True)
     print(f'Servidor ativo em: http://{host}:{args.port}', flush=True)
     print('Mantenha este Terminal aberto. Encerre com Control+C.', flush=True)
     try:
