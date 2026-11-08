@@ -1,0 +1,46 @@
+✔ normaliza endereço da aba e remove apenas fragmento (2.034791ms)
+✔ não analisa destino incompatível chrome://extensions/ (0.90775ms)
+✔ não analisa destino incompatível file:///tmp/a (0.868333ms)
+✔ não analisa destino incompatível javascript:alert(1) (0.880875ms)
+✔ não analisa destino incompatível https://user:pass@example.com/ (0.548458ms)
+✔ não analisa destino incompatível https://example.com:22/ (0.553375ms)
+✔ cor do índice 0 (0.733959ms)
+✔ cor do índice 49 (0.846958ms)
+✔ cor do índice 50 (0.6275ms)
+✔ cor do índice 79 (1.513833ms)
+✔ cor do índice 80 (1.446167ms)
+✔ cor do índice 100 (0.593666ms)
+✔ domínio recente mantém nota do servidor e razão curta (1.005083ms)
+✔ ameaça e certificado têm prioridade sobre motivo de idade (1.609042ms)
+✔ resultado bom não inventa aprovação nem avisos de configuração (0.651875ms)
+✔ retorno inválido não vira uma nota inventada (3.725125ms)
+✔ ameaça tem pontuação vermelha e preserva a fonte mesmo com dados técnicos perfeitos (0.585709ms)
+✔ dados insuficientes têm classificação neutra sem inventar ameaça (0.750334ms)
+✔ contrato inconsistente não mostra pontuação acima do limite de risco (0.596625ms)
+✔ link funciona localmente e aceita futuro siteHTTPS sem URL da aba (1.423416ms)
+✔ link do projeto rejeita javascript, credenciais eHTTP externo (1.401833ms)
+✔ aba semURL disponível orienta abrir um siteHTTPouHTTPS (0.42575ms)
+✔ abrir popup apenas identifica aba e oferece análise manual (4.374083ms)
+✔ resultado compacto mostra nota e motivo sem detalhes internos (2.731875ms)
+✔ páginas internas doChrome não são enviadas ao motor (2.959292ms)
+✔ resultado de outra aba não altera o resultado atual (2.220417ms)
+✔ texto malicioso é tratado como texto e não criaHTML (1.299833ms)
+✔ abrir popup não inicia análise nem acessa rede (2.956375ms)
+✔ job rápido continua sem popup e guarda o resultado na sessão (4.931292ms)
+✔ reinício do worker recupera job em vez de criar outro (3.116459ms)
+✔ resposta para outra URL não vira nota da aba atual (8.648584ms)
+✔ mensagem de outra origem e página interna não inicia job (3.091917ms)
+✔ duplo clique durante análise não duplica job (1.419666ms)
+✔ job interrompido antes de receberID não deixa popup preso para sempre (0.67325ms)
+✔ aceitaURL canônica do motor sem perder a associação com a aba (1.522834ms)
+✔ outro servidor na porta local gera orientação em vez de erro deparse (0.860209ms)
+✔ motor antigo não é apresentado como nova análise de risco (1.772084ms)
+✔ resultado antigo em sessão é descartado após atualização (0.976959ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 201.632875

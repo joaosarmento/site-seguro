@@ -1,0 +1,3 @@
+O SQLite reviews.sqlite3 será criado automaticamente ao iniciar o servidor.
+O pacote não inclui histórico de URLs nem avaliações de teste.
+Faça cópias de segurança deste arquivo após receber avaliações reais.

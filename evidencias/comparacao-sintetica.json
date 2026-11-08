@@ -1,0 +1,66 @@
+[
+  {
+    "scenario": "Safe Browsing: engenharia social",
+    "oldScore": 100,
+    "oldRisk": "Risco elevado",
+    "newScore": 10,
+    "newRisk": "Ameaça identificada",
+    "source": "synthetic"
+  },
+  {
+    "scenario": "URLhaus: URL exata ativa",
+    "oldScore": 100,
+    "oldRisk": "Risco elevado",
+    "newScore": 10,
+    "newRisk": "Ameaça identificada",
+    "source": "synthetic"
+  },
+  {
+    "scenario": "VirusTotal: 3 mecanismos maliciosos",
+    "oldScore": 100,
+    "oldRisk": "Risco elevado",
+    "newScore": 10,
+    "newRisk": "Ameaça identificada",
+    "source": "synthetic"
+  },
+  {
+    "scenario": "VirusTotal: 1 mecanismo malicioso",
+    "oldScore": 100,
+    "oldRisk": "Atenção",
+    "newScore": 39,
+    "newRisk": "Risco elevado",
+    "source": "synthetic"
+  },
+  {
+    "scenario": "VirusTotal: 1 mecanismo suspeito",
+    "oldScore": 100,
+    "oldRisk": "Atenção",
+    "newScore": 69,
+    "newRisk": "Atenção",
+    "source": "synthetic"
+  },
+  {
+    "scenario": "VirusTotal: registro de 120 dias",
+    "oldScore": 100,
+    "oldRisk": "Atenção",
+    "newScore": 79,
+    "newRisk": "Atenção",
+    "source": "synthetic"
+  },
+  {
+    "scenario": "URLhaus: indicação no hostname",
+    "oldScore": 100,
+    "oldRisk": "Atenção",
+    "newScore": 79,
+    "newRisk": "Atenção",
+    "source": "synthetic"
+  },
+  {
+    "scenario": "Sem alertas nas fontes",
+    "oldScore": 100,
+    "oldRisk": "Sem alertas relevantes",
+    "newScore": 100,
+    "newRisk": "Sem alertas relevantes",
+    "source": "synthetic"
+  }
+]

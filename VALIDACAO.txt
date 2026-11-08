@@ -1,0 +1,5 @@
+CORREÇÃO DO RENDER — 08/11/2026
+
+Testes locais: 108 testes do motor e 14 testes da ponte/pacote passaram; quatro testes específicos de configuração Render passaram após a adição do último caso. O servidor foi iniciado localmente com PORT e recebeu requisições simulando o Host público e o Origin HTTPS. Domínios e origens não autorizados foram rejeitados. Não foi feito deploy no Render; o serviço publicado continua usando a versão anterior até a atualização.
+
+Os arquivos na pasta evidencias são registros históricos de outra versão.

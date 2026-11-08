@@ -1,0 +1,31 @@
+✔ faixa visual para 0: bad (1.100417ms)
+✔ faixa visual para 40: bad (0.212375ms)
+✔ faixa visual para 49: bad (0.131375ms)
+✔ faixa visual para 50: medium (0.10625ms)
+✔ faixa visual para 79: medium (0.139792ms)
+✔ faixa visual para 80: good (0.12325ms)
+✔ faixa visual para 100: good (0.098208ms)
+✔ faixa visual para null: unknown (0.093625ms)
+✔ inconclusivo prevalece sobre número antigo em cache (0.137708ms)
+✔ resultado remoto 40 usa a classe vermelha e legenda textual (0.593709ms)
+✔ demonstrações geram faixas distintas (1.976375ms)
+✔ resultado inconclusivo não mostra porcentagem de payload antigo (0.079792ms)
+✔ ameaça aparece antes da pontuação vermelha e escapa dados das fontes (0.165917ms)
+✔ servidor antigo não entrega nota técnica como se fosse pontuação consolidada (0.326666ms)
+✔ resultado favorável mantém índice, coberturas e nota de oficialidade sem alertas internos (0.231083ms)
+✔ domínio recente mostra apenas a razão de cautela e o índice calculado (0.14725ms)
+✔ alertas reais de ameaça e certificado continuam visíveis sem termos de cálculo (0.097459ms)
+✔ downgrade tem uma explicação sem alerta HTTP duplicado (0.065917ms)
+✔ senha enviada a outro domínio e grafia enganosa mantêm motivos específicos (0.0735ms)
+✔ impossibilidade de acesso é um estado neutro e não uma suspeita de fraude (0.054584ms)
+✔ hostname e descrições recebidos do servidor continuam escapados (0.423958ms)
+✔ tópicos verificados voltam com suas descrições e sem pontos internos (0.614583ms)
+✔ tentativa sem resultado não é apresentada como tópico validado (0.413834ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178.665209

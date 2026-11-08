@@ -1,0 +1,16 @@
+test_another_extension_and_external_websites_cannot_start_jobs (test_extension_api.ExtensionApiTests) ... ok
+test_engine_errors_do_not_expose_internal_exception (test_extension_api.ExtensionApiTests) ... ok
+test_invalid_input_does_not_start_worker (test_extension_api.ExtensionApiTests) ... ok
+test_missing_and_malformed_job_ids_do_not_disclose_results (test_extension_api.ExtensionApiTests) ... ok
+test_private_destinations_remain_blocked_by_engine (test_extension_api.ExtensionApiTests) ... ok
+test_saturation_is_bounded_and_not_queued (test_extension_api.ExtensionApiTests) ... ok
+test_start_and_result_share_engine_canonical_url (test_extension_api.ExtensionApiTests) ... ok
+test_start_returns_quickly_and_result_preserves_engine_score (test_extension_api.ExtensionApiTests) ... ok
+test_all_manifest_resources_and_external_popup_scripts_exist (test_package.PackageTests) ... ok
+test_manifest_has_least_permissions_and_stable_identity (test_package.PackageTests) ... ok
+test_shipped_code_has_no_remote_scripts_or_dynamic_html (test_package.PackageTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.081s
+
+OK

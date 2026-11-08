@@ -1,0 +1,257 @@
+{
+  "url": "https://exemplo-ficticio.example/",
+  "result": {
+    "url": "https://exemplo-ficticio.example/",
+    "hostname": "exemplo-ficticio.example",
+    "finalUrl": "https://exemplo-ficticio.example/",
+    "score": 10,
+    "measuredScore": 100,
+    "coverage": 92,
+    "technicalCoverage": 100,
+    "appliedCap": null,
+    "availablePoints": 100,
+    "earnedPoints": 100,
+    "partial": true,
+    "coverageLevel": "alta",
+    "verifiedChecks": 5,
+    "totalScoredChecks": 5,
+    "partialChecks": 0,
+    "reputationCoverage": 67,
+    "technicalScore": 100,
+    "decision": {
+      "severity": "critical",
+      "maxScore": 10,
+      "label": "Ameaça identificada",
+      "threatTypes": [
+        "SOCIAL_ENGINEERING"
+      ],
+      "evidenceRefs": [
+        1,
+        2
+      ]
+    },
+    "risk": {
+      "band": "bad",
+      "label": "Ameaça identificada",
+      "reasons": [
+        {
+          "code": "reputation",
+          "source": "Google Safe Browsing",
+          "severity": "critical",
+          "maxScore": 10,
+          "critical": true,
+          "detail": "Google Safe Browsing sinalizou engenharia social. Evite informar dados, pagar ou baixar arquivos.",
+          "evidenceRef": 1
+        },
+        {
+          "code": "reputation",
+          "source": "VirusTotal",
+          "severity": "high",
+          "maxScore": 39,
+          "critical": false,
+          "detail": "VirusTotal: 1 mecanismo classificou a URL como maliciosa. Evite informar dados, pagar ou baixar arquivos.",
+          "evidenceRef": 2
+        }
+      ],
+      "points": 100,
+      "method": "consolidated_evidence_v1",
+      "calibrated": false
+    },
+    "reputationResults": [
+      {
+        "status": "unknown",
+        "detail": "Simulação",
+        "source": "URLhaus",
+        "hostname": "exemplo-ficticio.example",
+        "scope": "url",
+        "checkedAt": "2026-11-08T15:07:59.495722+00:00",
+        "chainIndex": 0,
+        "chainPosition": "final"
+      },
+      {
+        "status": "malicious",
+        "threatTypes": [
+          "SOCIAL_ENGINEERING"
+        ],
+        "scope": "url",
+        "detail": "Simulação",
+        "source": "Safe Browsing",
+        "hostname": "exemplo-ficticio.example",
+        "checkedAt": "2026-11-08T15:07:59.496264+00:00",
+        "chainIndex": 0,
+        "chainPosition": "final"
+      },
+      {
+        "status": "suspicious",
+        "maliciousEngines": 1,
+        "suspiciousEngines": 0,
+        "ageDays": 1,
+        "scope": "url",
+        "detail": "Simulação",
+        "sourceAnalyzedAt": "2026-11-07T12:00:00+00:00",
+        "source": "VirusTotal",
+        "hostname": "exemplo-ficticio.example",
+        "checkedAt": "2026-11-08T15:07:59.496266+00:00",
+        "chainIndex": 0,
+        "chainPosition": "final"
+      }
+    ],
+    "chainEvaluated": [
+      {
+        "hostname": "exemplo-ficticio.example",
+        "brandSignal": null
+      }
+    ],
+    "reputationVerified": false,
+    "reputationStatus": "alert",
+    "identityVerified": false,
+    "scoreMeaning": "link_score_with_threat_limits",
+    "reputationSourcesChecked": 2,
+    "reputationSourcesTotal": 3,
+    "informationalChecks": 7,
+    "weights": {
+      "dns": 0,
+      "redirects": 10,
+      "tls": 55,
+      "hsts": 0,
+      "headers": 10,
+      "url": 0,
+      "age": 0,
+      "reputation": 0,
+      "html": 20,
+      "email": 0,
+      "typosquatting": 5,
+      "infrastructure": 0
+    },
+    "tlsRevocationChecked": false,
+    "scoringMethod": "consolidated_link_score_v1",
+    "version": "0.10.0",
+    "level": "baixo",
+    "verdict": "Google Safe Browsing sinalizou engenharia social. Evite informar dados, pagar ou baixar arquivos.",
+    "domainAgeDays": 5000,
+    "domainAgeRisk": {
+      "status": "not_recent",
+      "cap": null,
+      "points": 0,
+      "detail": "Estabelecido: 5000d (~13 anos)."
+    },
+    "domainCreated": "2010-01-01",
+    "domainAgeSource": "rdap",
+    "techSummary": "TLSv1.3 · 1 IP(s)",
+    "capsApplied": [],
+    "checks": [
+      {
+        "title": "Resolução DNS",
+        "score": null,
+        "max": 0,
+        "detail": "93.184.215.14",
+        "category": "DNS",
+        "status": "informational",
+        "availableMax": 0
+      },
+      {
+        "title": "Redirecionamentos",
+        "score": 10,
+        "max": 10,
+        "detail": "HTTP 200",
+        "category": "Navegação",
+        "status": "checked",
+        "availableMax": 10
+      },
+      {
+        "title": "Certificado e TLS",
+        "score": 55,
+        "max": 55,
+        "detail": "TLSv1.3 · emissor CA",
+        "category": "TLS",
+        "status": "checked",
+        "availableMax": 55
+      },
+      {
+        "title": "HSTS",
+        "score": null,
+        "max": 0,
+        "detail": "max-age=31536000s, includeSubDomains, preload",
+        "category": "Cabeçalhos",
+        "status": "informational",
+        "availableMax": 0
+      },
+      {
+        "title": "Cabeçalhos de segurança",
+        "score": 10,
+        "max": 10,
+        "detail": "Presentes: CSP de scripts (4/4; análise aproximada), Proteção contra enquadramento, nosniff. Faltando: nenhum.",
+        "category": "Cabeçalhos",
+        "status": "checked",
+        "availableMax": 10
+      },
+      {
+        "title": "Heurística da URL",
+        "score": null,
+        "max": 0,
+        "detail": "Sinais: nenhum",
+        "category": "URL",
+        "status": "informational",
+        "availableMax": 0
+      },
+      {
+        "title": "Idade do domínio",
+        "score": null,
+        "max": 0,
+        "detail": "Estabelecido: 5000d (~13 anos).",
+        "category": "Domínio",
+        "status": "informational",
+        "availableMax": 0,
+        "riskCap": null
+      },
+      {
+        "title": "Threat Intelligence",
+        "score": null,
+        "max": 0,
+        "detail": "Simulação | Simulação | Simulação",
+        "category": "Reputação",
+        "status": "informational",
+        "availableMax": 0.0
+      },
+      {
+        "title": "Análise de conteúdo",
+        "score": 20,
+        "max": 20,
+        "detail": "Nenhum dos sinais pesquisados foi encontrado no HTML estático.",
+        "category": "Conteúdo",
+        "status": "checked",
+        "availableMax": 20
+      },
+      {
+        "title": "Segurança de e-mail (SPF/DMARC)",
+        "score": null,
+        "max": 0,
+        "detail": "SPF/DMARC de teste.",
+        "category": "Domínio",
+        "status": "informational",
+        "availableMax": 0
+      },
+      {
+        "title": "Typosquatting",
+        "score": 5,
+        "max": 5,
+        "detail": "Nenhum dos sinais de imitação pesquisados foi encontrado; identidade não confirmada.",
+        "category": "Reputação",
+        "status": "checked",
+        "availableMax": 5
+      },
+      {
+        "title": "Infraestrutura",
+        "score": null,
+        "max": 0,
+        "detail": "Geolocalização não entra na nota: país e provedor não comprovam segurança.",
+        "category": "Infraestrutura",
+        "status": "informational",
+        "availableMax": 0
+      }
+    ],
+    "redirects": [],
+    "disclaimer": "Pontuação heurística com pesos de engenharia, sem calibração estatística. DNS, SPF/DMARC e geolocalização são apenas informativos. Revogação de certificados (OCSP/CRL), execução de JavaScript e identidade empresarial não são confirmadas. NÃO é probabilidade real de segurança. Sites legítimos podem receber nota baixa e golpes podem receber nota alta.",
+    "analyzedAt": "2026-11-08T15:07:59.513189+00:00"
+  }
+}

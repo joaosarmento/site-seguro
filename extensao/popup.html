@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Site Seguro</title><link rel="stylesheet" href="style.css"><script src="config.js" defer></script><script src="common.js" defer></script><script src="popup.js" defer></script></head>
+<body><main class="popup">
+<header><span class="mark" aria-hidden="true">S</span><h1>Site Seguro<span>.</span></h1></header>
+<section class="target"><p class="eyebrow">PÁGINA ATUAL</p><p id="hostname" title="">Identificando o site…</p></section>
+<section id="result" aria-live="polite" hidden>
+<p id="label" class="label"></p>
+<div class="score-wrap"><svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="track" cx="60" cy="60" r="52"/><circle id="progress" class="progress" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/></svg><div class="score-center"><div><strong id="score">—</strong><span class="percent">%</span></div><span class="score-caption">pontuação</span></div></div>
+<ul id="reasons" class="reasons" hidden></ul>
+</section>
+<p id="status" class="status" role="status" hidden></p>
+<button id="analyze" type="button" disabled>Analisar site</button>
+<footer><a id="project-link" target="_blank" rel="noopener noreferrer">Abrir versão web ↗</a></footer>
+</main></body></html>
