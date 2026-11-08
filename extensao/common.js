@@ -24,7 +24,7 @@
       const decision = result.decision;
       if (!decision || !(decision.severity in limits) || typeof decision.maxScore !== 'number' ||
           !Number.isFinite(decision.maxScore) || decision.maxScore < 0 || decision.maxScore > 100)
-        throw Error('Atualize e reinicie o servidor deste pacote para usar a nova análise.');
+        throw Error('O serviço de análise precisa ser atualizado. Tente novamente mais tarde.');
       const score = Math.min(result.score, decision.maxScore, limits[decision.severity], bandLimits[risk.band]);
       const band = risk.band === 'unknown' || decision.severity === 'limited' ? 'unknown' : score >= 80 ? 'good' : score >= 50 ? 'medium' : 'bad';
       const shortReasons = {

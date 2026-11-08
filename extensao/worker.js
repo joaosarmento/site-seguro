@@ -34,16 +34,16 @@ async function post(path, body) {
   try {
     const response = await fetch(API + path, {method: 'POST', credentials: 'omit', cache: 'no-store',
       headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body), signal: abort.signal});
-    const data = await response.json().catch(() => { throw Error('Inicie o servidor deste pacote. O serviço nesta porta não é compatível com a extensão.'); });
+    const data = await response.json().catch(() => { throw Error('O serviço de análise respondeu de forma inesperada. Tente novamente mais tarde.'); });
     if (!response.ok) {
-      if ([404, 405].includes(response.status)) throw Error('Inicie o servidor deste pacote. A análise pode ter expirado ou o servidor aberto pode ser de outra versão.');
+      if ([404, 405].includes(response.status)) throw Error('A análise pode ter expirado ou o serviço ainda não está atualizado. Tente novamente.');
       if (response.status === 429) throw Error('Há análises em andamento. Tente novamente em instantes.');
       throw Error(typeof data.error === 'string' ? data.error : 'Não foi possível concluir a análise.');
     }
     return data;
   } catch (error) {
     if (error.name === 'AbortError' || error instanceof TypeError)
-      throw Error('O servidor local não respondeu. Inicie o arquivo INICIAR-MAC.command deste pacote.');
+      throw Error('O serviço de análise não respondeu. Confira sua conexão e tente novamente em instantes.');
     throw error;
   } finally { clearTimeout(timeout); }
 }
@@ -59,14 +59,14 @@ async function poll(requestId) {
     const data = await post('/api/extension/status', {jobId: state.jobId});
     if (!state || state.requestId !== requestId || state.phase !== 'pending') return;
     if (data.state === 'pending') {
-      if (Date.now() - state.createdAt > 90000) throw Error('A análise demorou demais. Tente novamente.');
+      if (Date.now() - state.createdAt > 180000) throw Error('A análise demorou demais. Tente novamente.');
       // Session updates retain progress and reset Chrome's worker idle timer.
       await persist({...state, updatedAt: Date.now()});
       if (state?.requestId === requestId) schedule(requestId);
     } else if (data.state === 'done') {
       if (SiteSeguro.normalizeUrl(data.result?.url) !== (state.analysisUrl || state.url)) throw Error('O resultado não corresponde a este endereço. Analise novamente.');
       if (data.result?.scoringMethod !== MODEL || !data.result?.risk || !data.result?.decision)
-        throw Error('Atualize e reinicie o servidor deste pacote para usar a nova análise.');
+        throw Error('O serviço de análise precisa ser atualizado. Tente novamente mais tarde.');
       const result = SiteSeguro.presentation(data.result);
       await persist({...state, phase: 'done', result, updatedAt: Date.now()});
     } else if (data.state === 'error') {

@@ -1,7 +1,6 @@
 'use strict';
-// Quando o site estiver publicado, altere somente PUBLIC_SITE_URL.
-// Isso muda o link do rodapé. A API permanece local até ser publicada separadamente.
+// A extensão usa a API publicada em HTTPS; o endereço do site abre no rodapé.
 self.SITE_SEGURO_CONFIG = Object.freeze({
-  API_BASE_URL: 'http://127.0.0.1:8765',
+  API_BASE_URL: 'https://site-seguro.onrender.com',
   PUBLIC_SITE_URL: 'https://site-seguro.onrender.com'
 });

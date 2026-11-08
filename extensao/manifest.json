@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Site Seguro",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "minimum_chrome_version": "120",
   "description": "Analise o site atual e veja a pontuação do link e os sinais de atenção.",
   "permissions": [
@@ -9,8 +9,9 @@
     "storage"
   ],
   "host_permissions": [
-    "http://127.0.0.1/*"
+    "https://site-seguro.onrender.com/*"
   ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyEVZXNCBbKe9C3beAbo/neUU7KaSYydSMgH4UrlQbEOj0IxLL2ORzqs6VUh0Cf0JT0pMq9ETGucCnbklNibUQDvGFYxaibv2FmZ29vRrU7RywT5laqmljS9B92gKn96VZT798aW87Vy4wfr+KJM7xMDNrRDhHXPhjU25UiMByX4WefG5joUnEhIVfLxJwF0kFv7Cdf1fAhrmC7A9RVqTrdFd8LPPueItNUZo7NV8nGK18fNv2wjl775S+4NEgfZ0V5Gz1RBoOM0v1UUH79ZIG3G7Zt8mAvWA1eV7Tlzx2b3dP9CwpvXgsz0nhHuBjFgHwdPapOnnWrbzD/i/En1vkQIDAQAB",
   "background": {
     "service_worker": "worker.js"
   },
@@ -31,6 +32,6 @@
     "128": "icons/icon128.png"
   },
   "content_security_policy": {
-    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src http://127.0.0.1:8765; object-src 'none'; base-uri 'none'"
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://site-seguro.onrender.com; object-src 'none'; base-uri 'none'"
   }
 }
