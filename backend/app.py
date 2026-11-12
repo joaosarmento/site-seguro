@@ -13,10 +13,14 @@ import server as engine
 
 PORTA = int(os.environ.get("PORT", 8765))
 IS_RENDER = "PORT" in os.environ
-IDENTITY = json.loads(Path(__file__).with_name('extension-identity.json').read_text())['id']
-if not re.fullmatch(r'[a-p]{32}', IDENTITY):
+identities = json.loads(Path(__file__).with_name('extension-identity.json').read_text())
+additional_ids = identities.get('additional_ids', [])
+if not isinstance(additional_ids, list):
+    raise ValueError('Identidades adicionais da extensão inválidas.')
+extension_ids = [identities.get('id'), *additional_ids]
+if not all(isinstance(value, str) and re.fullmatch(r'[a-p]{32}', value) for value in extension_ids):
     raise ValueError('Identidade da extensão inválida.')
-EXTENSION_ORIGIN = 'chrome-extension://' + IDENTITY
+EXTENSION_ORIGINS = frozenset('chrome-extension://' + value for value in extension_ids)
 EXTENSION_ROUTES = {'/api/extension/start', '/api/extension/status'}
 
 
@@ -89,9 +93,8 @@ class ExtensionHandler(engine.Handler):
         protocolo = 'https://' if IS_RENDER else 'http://'
         same_origin = protocolo + self.headers.get('Host', '')
         
-        # A identidade da extensão é fixa no manifesto de desenvolvimento.
         # Origin é apenas uma verificação de origem, não autenticação.
-        if origin and origin not in (EXTENSION_ORIGIN, same_origin):
+        if origin and origin != same_origin and origin not in EXTENSION_ORIGINS:
             return self.respond(403, {'error': 'Origem não autorizada.'})
         
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
